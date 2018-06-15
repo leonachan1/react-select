@@ -18,23 +18,27 @@ const GithubUsers = createClass({
 		};
 	},
 	onChange (value) {
+		console.log(value);
 		this.setState({
 			value: value,
 		});
 	},
 	switchToMulti () {
+		console.log(this.state.value);
 		this.setState({
 			multi: true,
 			value: [this.state.value],
 		});
 	},
 	switchToSingle () {
+		console.log(this.state.value);
 		this.setState({
 			multi: false,
 			value: this.state.value ? this.state.value[0] : null
 		});
 	},
 	getUsers (input) {
+		console.log(input);
 		if (!input) {
 			return Promise.resolve({ options: [] });
 		}
@@ -46,6 +50,7 @@ const GithubUsers = createClass({
 		});
 	},
 	gotoUser (value, event) {
+		console.log(value);
 		window.open(value.html_url);
 	},
 	toggleBackspaceRemoves () {
